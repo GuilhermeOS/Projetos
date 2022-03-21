@@ -1,6 +1,10 @@
 .oferta {
-    padding: 0 20px;
-    height: 150px;
+    padding: 0 10px;
+    margin: 0 10px;
+    background-color: #fff;
+    border-radius: 6px;
+    width: 100%;
+    height: 80%;
 }
 
 .oferta img {
@@ -8,15 +12,17 @@
     height: 100px;
     align-items: center;
     justify-content: center;
+    object-fit: cover;
 }
 
 .item {
     display: flex;
     flex-direction: column;
+    
 }
 
 .item p {
     text-align: center;
-    color: #fff;
-    font-size: 20px;
+    color: #000;
+    font-size: 16px;
 }

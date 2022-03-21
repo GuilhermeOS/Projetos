@@ -1,67 +1,72 @@
 import Ofertas from '../../layout/ofertas/Ofertas'
+import Card from '../../layout/cards/Card'
 import styles from './Home.module.css'
 
-import bicicleta_azul from '../../img/produtos/bicicleta_azul.jpg'
-import bicicleta_preta from '../../img/produtos/bicicleta_preta.jpg'
-import bicicleta_rosa from '../../img/produtos/bicicleta_rosa.jpg'
-import bicicleta_verde from '../../img/produtos/bicicleta_verde.jpg'
-import bicicleta_old from '../../img/produtos/bicicleta_old.jpg'
-import bicicleta_infantil from '../../img/produtos/bicicleta_infantil.jpg'
-import bicicleta_motor from '../../img/produtos/bicicleta_motor.jpg'
+import { useEffect, useState, useRef } from 'react'
+
+import { IoMdArrowDropleft, IoMdArrowDropright }  from 'react-icons/io'
 
 export default function Home() {
 
-    const ofertas = [
-        {
-            imagem : bicicleta_azul,
-            text : "Bicleta Azul",
-            valor : "1.500,00"
-        },
-        {
-            imagem : bicicleta_preta,
-            text : "Bicleta Preta",
-            valor : "1.700,00"
-        },
-        {
-            imagem : bicicleta_rosa,
-            text : "Bicleta Rosa",
-            valor : "1.100,00"
-        },
-        {
-            imagem : bicicleta_verde,
-            text : "Bicleta Verde",
-            valor : "1.300,00"
-        },
-        {
-            imagem : bicicleta_old,
-            text : "Bicleta Old",
-            valor : "2.500,00"
-        },
-        {
-            imagem : bicicleta_motor,
-            text : "Bicleta Motorizada",
-            valor : "4.500,00"
-        },
-        {
-            imagem : bicicleta_infantil,
-            text : "Bicleta Infantil",
-            valor : "1.000,00"
-        }
-    ]
+    const [ produtos, setProdutos ] = useState([]);
+    const carrosel = useRef(null)
+
+    useEffect(() => {
+        fetch('http://localhost:3000/static/produtos.json')
+            .then((response) => response.json())
+            .then(setProdutos)
+    }, [])
+
+    const handleLeftClick = (e) => {
+        e.preventDefault();
+        carrosel.current.scrollLeft -= carrosel.current.offsetWidth;
+    }
+
+    const handleRightClick = (e) => {
+        e.preventDefault();
+        carrosel.current.scrollLeft += carrosel.current.offsetWidth;
+    }
 
     return (
         <div className={ styles.container }>
             <div className={ styles.content }>
                 <h1>Ofertas da Semana</h1>
-                <div className={ styles.carrosel }>
-                    {  ofertas.map((oferta) => {
-                        <Ofertas 
-                            img={ oferta.imagem }
-                            texto={ oferta.text }
-                            valor={ oferta.valor }
-                        />
+                <div className={ styles.carrosel } ref={ carrosel } >
+                    { produtos.map((produto) => {
+
+                        const { id, image, text, valor } = produto;
+
+                        return (
+                            <Ofertas 
+                                key={ id }
+                                img={ image }
+                                texto={ text }
+                                valor={ valor } 
+                            />
+                        )
                     }) }
+                    <div className={ styles.buttons }>
+                        <button className={ styles.button } onClick={ handleLeftClick }><IoMdArrowDropleft/></button>
+                        <button onClick={ handleRightClick }><IoMdArrowDropright/></button>
+                    </div>
                 </div>
+                <h2>Novos Produtos</h2>
+                <div className={ styles.cards }>
+                    { produtos.map((produto) => {
+                        const { id, image, text, valor } = produto;
+
+                        return (
+                            <Card 
+                                key={ id }
+                                img={ image }
+                                texto={ text }
+                                valor={ valor }
+                            />
+                        )
+                    }) }
+                    
+                </div>
+                
             </div>
         </div>
     )

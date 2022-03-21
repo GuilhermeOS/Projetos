@@ -1,0 +1,68 @@
+[
+    {
+        "id": 1,
+        "image": "../../img/produtos/bicicleta_azul.jpg",
+        "text": "Bicicleta Azul",
+        "valor": "1.500,00"
+    },
+    {
+        "id": 2,
+        "image": "../../img/produtos/bicicleta_infantil.jpg",
+        "text": "Bicicleta Infantil",
+        "valor": "1.000,00"
+    },
+    {
+        "id": 3,
+        "image": "../../img/produtos/bicicleta_motor.jpg",
+        "text": "Bicicleta Motorizada",
+        "valor": "4.500,00"
+    },
+    {
+        "id": 4,
+        "image": "../../img/produtos/bicicleta_old.jpg",
+        "text": "Bicicleta Vintage",
+        "valor": "3.500,00"
+    },
+    {
+        "id": 5,
+        "image": "../../img/produtos/bicicleta_preta.jpg",
+        "text": "Bicicleta Preta",
+        "valor": "1.500,00"
+    },
+    {
+        "id": 6,
+        "image": "../../img/produtos/bicicleta_rosa.jpg",
+        "text": "Bicicleta Rosa",
+        "valor": "1.500,00"
+    },
+    {
+        "id": 7,
+        "image": "../../img/produtos/bicicleta_verde.jpg",
+        "text": "Bicicleta Verde",
+        "valor": "1.500,00"
+    },
+    {
+        "id": 8,
+        "image": "../../img/produtos/moto_azul.jpg",
+        "text": "Moto Azul",
+        "valor": "10.500,00"
+    },
+    {
+        "id": 9,
+        "image": "../../img/produtos/moto_prata.jpg",
+        "text": "Moto Prata",
+        "valor": "10.500,00"
+    },
+    {
+        "id": 10,
+        "image": "../../img/produtos/moto_preta.jpg",
+        "text": "Moto Preta",
+        "valor": "10.500,00"
+    },
+    {
+        "id": 11,
+        "image": "../../img/produtos/moto_vermelha.jpg",
+        "text": "Moto Vermelha",
+        "valor": "10.500,00"
+    }
+]

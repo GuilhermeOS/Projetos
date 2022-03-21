@@ -1,6 +1,6 @@
 import styles from './NavBar.module.css'
 
-import logo from '../../img/logo/logo.png'
+import logo from '../../../public/img/logo/logo.png'
 import { AiOutlineSearch, AiOutlineUser, AiOutlineShoppingCart } from 'react-icons/ai'
 
 export default function NavBar() {
