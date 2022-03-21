@@ -6,6 +6,7 @@ import {
 
 import Home from "./pages/home/Home";
 import NavBar from './layout/navbar/NavBar';
+import Footer from "./layout/footer/Footer";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="" />
       </Routes>
 
+      <Footer />
     </BrowserRouter>
   )
 }
