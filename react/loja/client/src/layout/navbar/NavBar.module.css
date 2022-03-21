@@ -1,0 +1,72 @@
+header {
+    background-color: #C9C5ED;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.lista {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin-left: 200px;
+}
+
+.lista li {
+    margin-right: 40px;
+}
+
+.lista li a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    transition: .5s;
+}
+
+.lista li a:hover {
+    color: #000;
+    border-bottom: 1px solid #000;
+}
+
+.buscar {
+    position: relative;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    margin-right: -150px;
+}
+
+.buscar input {
+    width: 100%;
+    height: 25px;
+    padding: 0 20px;
+}
+
+.buscar button {
+    position:absolute;
+    display: flex;
+    padding-left: 3px;
+    z-index:10;
+    border:none;
+    background:transparent;
+    outline:none;
+}
+
+.actions {
+    font-size: 30px;
+    margin-right: 10px;
+    cursor: pointer;
+    color: #fff;
+}
+
+
+.item_action {
+    margin-right: 20px;
+}
+
+.item_action:hover {
+    color: #000;
+    border-bottom: 1px solid #000;
+}
